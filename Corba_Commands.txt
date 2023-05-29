@@ -1,0 +1,21 @@
+Terminal 1-
+
+idlj –fall Echo.idl
+
+javac EchoApp/*.java
+
+jar cvf echoapp.jar EchoApp/*.class
+
+javac -classpath .:echoapp.jar Server.java EchoServer.java Client.java
+
+orbd -ORBInitialPort 1050 -ORBInitialHost localhost
+
+
+Terminal 2-
+
+java Server -ORBInitialPort 1050 -ORBInitialHost localhost
+
+
+ Terminal 3- 
+
+java Client -ORBInitialPort 1050 -ORBInitialHost localhost
